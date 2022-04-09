@@ -2,6 +2,7 @@
 In Majority of the files i added the comments to undestand the flow. 
 
 Controller -> Service -> Repository.
+
 From Above line Repository is not dependent on any layer, but usually we can add DataSource, but in this project i am not doing that.
 Service layer is dependent on Repository Object, means Service layer uses Reposirory reference in its class.
 Controller layer is dependent on Service layer object, so controller uses service reference in its class.
