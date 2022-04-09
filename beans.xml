@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    <!--Spring use Default no arg constructor to create the object -->
+    
+    <bean id="mr" class="com.jalaparthi.repository.MessageRepositoryImpl"></bean>
+    
+    <!--Here Spring uses one arg constructor to create object of Service -->
+    
+    <bean id="ms"  class="com.jalaparthi.service.MessageServiceImpl">   
+   
+    <constructor-arg>  
+    
+   <ref bean ="mr" />
+    
+    </constructor-arg>
+   
+    </bean>
+    
+    <bean id="mc" class="com.jalaparthi.controller.MessageController">   
+    
+    <constructor-arg>
+    
+    <ref bean = "ms"/>
+    
+    </constructor-arg>
+    
+    </bean>
+        
+ </beans>
